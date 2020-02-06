@@ -2,15 +2,46 @@
 <html>
   <head>
     <title>Module Test Server</title>
-    <base href="/">
-    <meta charset="utf-8">
-    <!-- <link rel="stylesheet" type="text/css" href="dist/<some_css_file>.css"/> -->
+    <base href='/'>
+    <meta charset='utf-8'>
+    <!-- <link rel='stylesheet' type='text/css' href='dist/<some_css_file>.css'/> -->
   </head>
-  <body spellcheck="false">
-    <div>Hello World</div>
+  <body spellcheck='false'>
+    <div id='container' style='height: 200px; width: 100%; background-color: yellow;'>
+      <div style="width:100px; margin:auto;">Right Click Me</div>
+    </div>
+    </table>
   </body>
 </html>
-<!-- <script defer type="module" src="src/js/module.js"></script> -->
-<script type="module">
-  // Some JavaScript Code
+<script defer src='/dist/context-menu.js'></script>
+<script>
+
+window.onload = function () {
+
+  const options = {
+    // div to apply custom context menu to
+    'div': 'container',
+    // renderer for applying css and styles to entire context menu
+    'menuRenderer': null,
+    // renderer for applying css and styles to each row in the context menu
+    'itemRenderer': null,
+    // menu items and sub items
+    'items': {
+        // parent menu item example with on click function
+        'menu-item-1' : function() { console.log('menu-item-1') },
+        'menu-item-2' : {
+          // child menu item example with onclick function
+          'menu-item-2.1': function() { console.log('menu-item-2.1') },
+          'menu-item-2.2': {
+            'menu-item-2.2.1' : function() { console.log('menu-item-2.2.1') },
+            'menu-item-2.2.2' : function() { console.log('menu-item-2.2.2') }
+          }
+        }
+    }
+  }
+
+  contextmenu.default.init(options);
+
+};
+
 </script>

@@ -61,13 +61,29 @@ function getWebpackCnf (name) {
 	  },
 	  devtool: "source-map",
 	  output: {
-	    filename: "[name].js"
+	    filename: "[name].js",
+			libraryTarget: 'var',
+      library: pkg.name.replace('-', ''),
 	  },
 		externals: {},
 	  optimization: {
 	    minimize: false
 	  },
-		mode: "production"
+		mode: "production",
+		module: {
+		  rules: [
+		    {
+		      test: /\.m?js$/,
+		      exclude: /(node_modules|bower_components)/,
+		      use: {
+		        loader: 'babel-loader',
+		        options: {
+		          presets: ['@babel/preset-env']
+		        }
+		      }
+		    }
+		  ]
+		}
 	}
 }
 

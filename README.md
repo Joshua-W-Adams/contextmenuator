@@ -1,2 +1,2 @@
-# esmodules-boilerplate
-A template for creating modules in accordance with the es modules design pattern
+# context-menu
+A JavaScript component for creating custom context menus
