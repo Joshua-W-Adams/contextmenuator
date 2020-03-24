@@ -1,5 +1,5 @@
 {
-  "name": "context-menu.js",
+  "name": "@joshadams/context-menu.js",
   "version": "1.0.0",
   "description": "A JavaScript component for creating custom context menus",
   "main": "index.js",
