@@ -1,5 +1,5 @@
 {
-  "name": "@joshadams/context-menu.js",
+  "name": "contextmenuator",
   "version": "1.0.0",
   "description": "A JavaScript component for creating custom context menus",
   "main": "index.js",
